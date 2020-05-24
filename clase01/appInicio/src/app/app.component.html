@@ -1,0 +1,5 @@
+<app-register></app-register>
+<button (click)="addNewFruitName()" [disabled]="!isEnabled">New fruit</button>
+<input type="text" (input)="captureFruitName($event)">
+<app-todo *ngFor="let fruitName of fruitNames; let indexFruitName=index" [fruitName]="fruitName"
+	[indexFruitName]="indexFruitName" (onDeleteFruitName)="removeFruitName($event)"></app-todo>
