@@ -1,0 +1,17 @@
+<div class="row pt-4">
+	<div class="col-12 backgroundRed">
+
+		<div class="card col-4 mt-4 offset-1">
+			<div class="card-body">
+				<div class="row justify-content-around">
+					<button class="btn-default btn" (click)="showComponent(true)">Login</button>
+					<button class="btn-default btn" (click)="showComponent(false)">Registro</button>
+				</div>
+				<app-login *ngIf="isDisplay"></app-login>
+				<app-registro *ngIf="!isDisplay"></app-registro>
+			</div>
+		</div>
+
+	</div>
+
+</div>

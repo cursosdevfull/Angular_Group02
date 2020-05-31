@@ -1,0 +1,76 @@
+<form class="p-4" [formGroup]="group">
+	<div class="d-flex justify-content-center">
+		<button class="btn btn-primary" (click)="loadInitialData()">Load initial data</button>
+	</div>
+	<div class="form-group">
+		<input type="text" class="form-control" name="fullName" placeholder="Enter your fullname"
+			formControlName="fullName">
+		<span *ngIf="group.get('fullName').invalid && group.get('fullName').touched" class="error">Fullname is
+			required</span>
+	</div>
+	<div class="form-group">
+		<input type="text" class="form-control" name="email" placeholder="Enter your email" formControlName="email">
+		<span class="error"
+			*ngIf="group.get('email').invalid && group.get('email').touched && group.get('email').hasError('required')">Email
+			is required</span>
+		<span class="error"
+			*ngIf="group.get('email').invalid && group.get('email').touched && group.get('email').hasError('pattern')">Email
+			has not format correct</span>
+		<span class="error"
+			*ngIf="group.get('email').invalid && group.get('email').touched && group.get('email').hasError('deniedDomain')">Only
+			emails of company</span>
+	</div>
+	<div class="form-group">
+		<input type="password" class="form-control" name="password" placeholder="Enter your password"
+			formControlName="password">
+		<span class="error" *ngIf="group.get('password').invalid && group.get('password').touched">Password is
+			required</span>
+	</div>
+	<div class="form-group">
+		<input type="password" class="form-control" name="passwordConfirm" placeholder="Confirm your password"
+			formControlName="passwordConfirm">
+		<span class="error"
+			*ngIf="group.get('passwordConfirm').invalid && group.get('passwordConfirm').touched && group.get('passwordConfirm').hasError('required')">Password
+			confirm is
+			required</span>
+		<span class="error"
+			*ngIf="group.get('passwordConfirm').invalid && group.get('passwordConfirm').touched && group.get('passwordConfirm').hasError('passwordConfirm')">Password
+			and confirm are not match</span>
+	</div>
+
+	<div formArrayName="hobbies">
+		<p><strong>Hobbies</strong></p>
+		<button class="btn btn-warning" (click)="addHobbie()">Add</button>
+		<div class="form-group row" *ngFor="let control of group.get('hobbies')['controls'];let ind=index">
+			<input type="text" class="form-control col-8" [formControlName]="ind">
+			<button class="btn btn-danger col-4" (click)="deleteHobbie(ind)">Delete</button>
+			<span class="error"
+				*ngIf="group.get('hobbies')['controls'][ind].invalid && group.get('hobbies')['controls'][ind].touched">Hobbie
+				is required</span>
+		</div>
+	</div>
+
+	<div formArrayName="interests">
+		<div *ngFor="let control of group.get('interests')['controls']; let ind = index">
+			<label>
+				<input type="checkbox" [name]="ind" [formControlName]="ind">{{interestsList[ind]}}
+			</label>
+		</div>
+		<span class="error" *ngIf="group.get('interests').touched && group.get('interests').invalid">
+			Select 2 interests at least
+		</span>
+	</div>
+
+
+	<div class=" d-flex justify-content-center">
+		<button class="btn btn-success" (click)="signUp()">Sign up</button>
+	</div>
+	<div>
+		<label>
+			<input type="checkbox" name="terms" formControlName="terms"> Accept terms and conditions
+		</label>
+		<span class="error" *ngIf="group.get('terms').touched && group.get('terms').invalid">
+			You must accept terms and conditions
+		</span>
+	</div>
+</form>
