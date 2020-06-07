@@ -1,0 +1,23 @@
+<button (click)="executeCallAPI()">Call API</button>
+<button (click)="executeManyCallAPI()">Generate report</button>
+<button (click)="executeManyCallApiWinner()">Race ambulances</button>
+<table>
+  <thead>
+    <tr>
+      <th>UserId</th>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of postList">
+      <td>{{post.userId}}</td>
+      <td>{{post.id}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.body}}</td>
+    </tr>
+  </tbody>
+</table>
+<app-observables></app-observables>
+<app-registro></app-registro>
