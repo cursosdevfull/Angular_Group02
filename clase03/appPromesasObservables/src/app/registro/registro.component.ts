@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { UsuarioService } from '../usuario.service';
+import { MensajeService } from '../mensaje.service';
 
 @Component({
   selector: 'app-registro',
@@ -10,7 +12,11 @@ import { HttpClient } from '@angular/common/http';
 export class RegistroComponent implements OnInit {
   group: FormGroup;
 
-  constructor(private readonly http: HttpClient) {
+  constructor(
+    private readonly http: HttpClient,
+    private readonly usuarioService: UsuarioService,
+    private readonly mensajeService: MensajeService
+  ) {
     this.group = new FormGroup({
       nombre: new FormControl(null, Validators.required),
       correo: new FormControl(null, [Validators.required, Validators.email]),
@@ -22,12 +28,6 @@ export class RegistroComponent implements OnInit {
 
   registrar() {
     const usuario = this.group.value;
-    console.log(usuario);
-    const respuesta = this.http.post(
-      'http://clase-angular.cursos-dev.com/usuario',
-      usuario
-    );
-
-    respuesta.subscribe((data) => console.log(data));
+    this.usuarioService.registrar();
   }
 }

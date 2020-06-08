@@ -1,0 +1,6 @@
+<app-header *ngIf="userLogged"></app-header>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <app-login *ngIf="!userLogged"></app-login>
+  </div>
+</div>
