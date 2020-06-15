@@ -1,0 +1,14 @@
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+span.error {
+  color: red;
+  font-size: 10px;
+  font-style: italic;
+}
+
+span.errorCredentials {
+  font-size: 13px;
+}
