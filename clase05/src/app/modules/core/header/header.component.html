@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <a class="navbar-brand" href="#">Portal de Recetas</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/user" routerLinkActive="active">Usuarios</a>
+      </li>
+      <li class="nav-item" *appRolesAllowed="['SUPER','ADMIN']">
+        <a class="nav-link" routerLink="/recipe" routerLinkActive="active">Recetas</a>
+      </li>
+    </ul>
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="logout()">Logout</button>
+  </div>
+</nav>

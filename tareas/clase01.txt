@@ -1,0 +1,12 @@
+Agregar el CRUD de Receta
+
+modelo:
+ - titulo: string
+ - descripcion: string
+
+https://clase-angular.cursos-dev.com/receta
+
+
+acceso
+- correo: sergio@correo.com
+- contrasena: 123

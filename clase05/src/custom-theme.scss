@@ -1,0 +1,46 @@
+@import '~@angular/material/theming';
+@include mat-core(); /* For use in src/lib/core/theming/_palette.scss */
+$mat-rosado: (
+  50: #f6ebf3,
+  100: #e8cce2,
+  200: #d9abcf,
+  300: #ca89bb,
+  400: #be6fad,
+  500: #b3569e,
+  600: #ac4f96,
+  700: #a3458c,
+  800: #9a3c82,
+  900: #8b2b70,
+  A100: #ffcff1,
+  A200: #ff9ce2,
+  A400: #ff69d3,
+  A700: #ff50cc,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$clase04-primary: mat-palette($mat-rosado);
+$clase04-accent: mat-palette($mat-pink, A200, A100, A400);
+$clase04-warn: mat-palette($mat-red);
+
+$clase04-theme: mat-light-theme(
+  $clase04-primary,
+  $clase04-accent,
+  $clase04-warn
+);
+
+@include angular-material-theme($clase04-theme);

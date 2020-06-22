@@ -1,0 +1,27 @@
+<div class="row justify-content-center">
+  <div class="card col-6">
+    <button class="btn btn-primary" (click)="goToFormNewUser()">New user</button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of listUsers">
+          <td>{{user.nombre}}</td>
+          <td>{{user.correo}}</td>
+          <td>
+            <button class="btn btn-secondary" (click)="editUser(user._id)">Edit</button>
+          </td>
+          <td><button class="btn btn-danger" (click)="deleteUser(user._id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
