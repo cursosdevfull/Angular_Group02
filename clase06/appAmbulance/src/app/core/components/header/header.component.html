@@ -1,0 +1,44 @@
+<div fxLayout fxLayoutAlign="space-between">
+  <div fxLayout fxLayoutAlign="start center">
+    <button mat-icon-button (click)="openMenuSide()" fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Ambulance System</h1>
+  </div>
+
+  <div fxLayout>
+    <!--     <nav> -->
+    <nav fxHide.lt-md>
+      <button mat-button>
+        <mat-icon>dashboard</mat-icon>
+        DASHBOARD
+      </button>
+
+      <button mat-button>
+        <mat-icon>person</mat-icon>
+        USERS
+      </button>
+    </nav>
+    <!--       <ul>
+        <li><a href="">Dashboard</a></li>
+      </ul> -->
+    <!--     </nav> -->
+
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>mood</mat-icon>
+      {{nameUser}}
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>account_circle</mat-icon>
+        Profile
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>lock</mat-icon>
+        Logout
+      </button>
+    </mat-menu>
+  </div>
+
+</div>
