@@ -1,0 +1,40 @@
+<mat-sidenav-container>
+  <mat-sidenav #menuSide mode="over" position="start">
+    <mat-nav-list>
+      <!--       <mat-list-item>
+        <button mat-button>
+          <mat-icon>dashboard</mat-icon>
+          DASHBOARD
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon>person</mat-icon>
+          USERS
+        </button>
+      </mat-list-item> -->
+
+      <mat-list-item>
+        <a matLine href="">
+          <mat-icon>dashboard</mat-icon>
+          <span class="titleItem">DASHBOARD</span>
+        </a>
+      </mat-list-item>
+      <mat-list-item>
+        <a matLine href="">
+          <mat-icon>person</mat-icon>
+          <span class="titleItem">USERS</span>
+        </a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" *ngIf="userLogged">
+      <app-header [menu]="menuSide"></app-header>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

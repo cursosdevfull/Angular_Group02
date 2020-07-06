@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "507f191e810c19729de860ea",
+    "email": "user01@email.com",
+    "password": "123",
+    "name": "User 01",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNTE2MjM5MDIyLCJfaWQiOiI1MDdmMTkxZTgxMGMxOTcyOWRlODYwZWEiLCJlbWFpbCI6InVzZXIwMUBlbWFpbC5jb20iLCJuYW1lIjoiVXNlciAwMSJ9.0IXqHEuiq3C9gxsLua4W2q6m95vx9AYmsU25iUn-jVk"
+  },
+  {
+    "_id": "507f191e810c19729de860eb",
+    "email": "user02@email.com",
+    "password": "123",
+    "name": "User 02",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNTE2MjM5MDIyLCJfaWQiOiI1MDdmMTkxZTgxMGMxOTcyOWRlODYwZWIiLCJlbWFpbCI6InVzZXIwMkBlbWFpbC5jb20iLCJuYW1lIjoiVXNlciAwMiJ9.JM3JO6a_IdRBLA5CbIMQwQZyuhLJwvLTKZuysMcSnFQ"
+  },
+  {
+    "_id": "507f191e810c19729de860ec",
+    "email": "user03@email.com",
+    "password": "123",
+    "name": "User 03",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNTE2MjM5MDIyLCJfaWQiOiI1MDdmMTkxZTgxMGMxOTcyOWRlODYwZWMiLCJlbWFpbCI6InVzZXIwM0BlbWFpbC5jb20iLCJuYW1lIjoiVXNlciAwMyJ9.uY14hGSf2rNw14baThXIJSda0_ngytv3gaDsJRi_PZ0"
+  }
+]

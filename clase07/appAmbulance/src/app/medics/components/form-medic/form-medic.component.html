@@ -1,0 +1,25 @@
+<mat-toolbar color="warn">
+  <h2>Form Medic</h2>
+</mat-toolbar>
+
+<mat-dialog-content>
+  <form [formGroup]="group" (ngSubmit)="execute($event)" fxLayout="column">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput formControlName="name" name="name" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>CMP</mat-label>
+      <input type="text" matInput formControlName="cmp" name="cmp" required>
+    </mat-form-field>
+    <div fxLayout fxLayoutAlign="center">
+      <button mat-flat-button color="primary">Save</button>
+      <button mat-button mat-dialog-close>
+        Close
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>
+<!-- <mat-dialog-actions>
+  <button>Save</button>
+</mat-dialog-actions> -->

@@ -1,0 +1,23 @@
+<div class="fullscreen" fxLayout fxLayoutAlign="center center">
+  <mat-card fxFlex="1 1 400px" fxFlex.lt-sm="1 1 300px" class="mat-elevation-z12">
+    <form fxLayout="column" [formGroup]="group" (ngSubmit)="login($event)">
+      <h2>Enter your credentials</h2>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="text" matInput name="email" formControlName="email" required>
+        <!--         <mat-error *ngIf="group.get('email').hasError('email')">Email has not format correct</mat-error>
+        <mat-error *ngIf="group.get('email').hasError('required')">Email is required</mat-error> -->
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput name="password" formControlName="password" required>
+        <!--         <mat-error *ngIf="group.get('password').hasError('required')">Password is required</mat-error> -->
+      </mat-form-field>
+      <div fxLayout fxLayoutAlign="center">
+        <button mat-flat-button color="primary" type="submit">
+          Login
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

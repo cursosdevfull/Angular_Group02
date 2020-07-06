@@ -1,0 +1,23 @@
+.container-panel {
+  width: 600px;
+}
+
+.container-panel .mat-dialog-container {
+  padding: 0;
+}
+
+.container-panel .mat-dialog-content {
+  margin: 0;
+  padding: 24px;
+}
+
+.container-panel .mat-dialog-actions {
+  margin-bottom: 0;
+  padding: 8px 24px;
+}
+
+@media screen and (max-width: 400) {
+  .container-panel {
+    width: 340px;
+  }
+}
