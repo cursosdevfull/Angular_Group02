@@ -1,0 +1,54 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+/* For use in src/lib/core/theming/_palette.scss */
+$mat-purple: (
+  50: #f7e8fc,
+  100: #eac6f8,
+  200: #dda0f4,
+  300: #cf7aef,
+  400: #c45eeb,
+  500: #ba41e8,
+  600: #b33be5,
+  700: #ab32e2,
+  800: #a32ade,
+  900: #941cd8,
+  A100: #ffffff,
+  A200: #f1daff,
+  A400: #dda7ff,
+  A700: #d38eff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$appAmbulance-primary: mat-palette($mat-purple);
+$appAmbulance-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$appAmbulance-warn: mat-palette($mat-red);
+
+$appAmbulance-theme: mat-light-theme(
+  (
+    color: (
+      primary: $appAmbulance-primary,
+      accent: $appAmbulance-accent,
+      warn: $appAmbulance-warn,
+    ),
+  )
+);
+
+@include angular-material-theme($appAmbulance-theme);

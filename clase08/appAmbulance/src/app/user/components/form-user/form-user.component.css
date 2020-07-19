@@ -1,0 +1,12 @@
+.container-form {
+  width: 500px;
+}
+
+.container-form .mat-dialog-container {
+  padding: 0;
+}
+
+.container-form .mat-dialog-content {
+  margin: 0;
+  padding: 16px;
+}

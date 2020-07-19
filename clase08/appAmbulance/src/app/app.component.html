@@ -1,0 +1,15 @@
+<mat-sidenav-container>
+  <mat-sidenav #menuSide>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let item of elementsMenu">
+        <button mat-button (click)="goTo(item.path);menuSide.close()">
+          {{item.title}}
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header [menu]="menuSide" *ngIf="statusUser"></app-header>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
