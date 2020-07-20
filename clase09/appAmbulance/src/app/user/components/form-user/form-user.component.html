@@ -5,7 +5,7 @@
   </button>
 </mat-toolbar>
 <mat-dialog-content>
-  <form fxLayout="column" [formGroup]="group">
+  <form fxLayout="column" [formGroup]="group" (ngSubmit)="save()">
     <mat-form-field appearance="outline">
       <mat-label>Name</mat-label>
       <input type="text" matInput name="name" formControlName="name" required>
@@ -16,10 +16,31 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Password</mat-label>
-      <input type="password" matInput name="password" formControlName="password" required>
+      <input type="password" matInput name="password" formControlName="password" [required]="data ? false : true">
+      <mat-hint *ngIf="data">Type nothing if you don't want to change</mat-hint>
     </mat-form-field>
-    <div fxLayout fxLayoutAlign="center">
-      <button mat-flat-button color="primary">
+    <mat-form-field appearance="outline">
+      <mat-label>Role</mat-label>
+      <mat-select required name="roles" formControlName="roles">
+        <mat-option *ngFor="let role of listRoles | async" [value]="role._id">
+          {{role.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="photo" appDragAndDrop (onHover)="draging($event)" (onSendingFile)="receivingFile($event)"
+      [ngClass]="{hover: isDraging }" #showPicUser>
+    </div>
+    <div fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center">
+      <button mat-stroked-button color="warn" type="button" (click)="onUpload()">
+        <mat-icon>cloud_upload</mat-icon>
+        Upload
+      </button>
+      <!--       <button mat-stroked-button color="warn" type="button" (click)="inputFile.click()">
+        <mat-icon>cloud_upload</mat-icon>
+        Upload
+      </button> -->
+      <input type="file" (change)="receivingFile($event.target.files)" style="display: none;" #inputFile>
+      <button mat-flat-button color="primary" type="submit">
         Save
       </button>
     </div>

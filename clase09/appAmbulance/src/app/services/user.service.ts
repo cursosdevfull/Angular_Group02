@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { User } from '../models/user.interface';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -27,9 +27,36 @@ export class UserService {
     });
   }
 
-  insert() {}
+  insert(dataForm: FormData): Observable<any> {
+    return this.http.post(`${environment.pathAPI}/user`, dataForm);
+  }
 
-  update() {}
+  // tslint:disable-next-line: variable-name
+  update(_id: string, dataForm: FormData): Observable<any> {
+    const request = new HttpRequest(
+      'put',
+      `${environment.pathAPI}/user/${_id}`,
+      dataForm,
+      {
+        reportProgress: true,
+      }
+    );
 
-  delete() {}
+    return this.http.request(request);
+
+    /*     return this.http.put(`${environment.pathAPI}/user/${_id}`, dataForm); */
+  }
+
+  // tslint:disable-next-line: variable-name
+  delete(_id: string): Observable<any> {
+    return this.http.delete(`${environment.pathAPI}/user/${_id}`);
+  }
+
+  getUrlPhoto(photo: string): string {
+    if (!photo) {
+      return '';
+    }
+
+    return `${environment.pathAPI}/files/${photo}`;
+  }
 }

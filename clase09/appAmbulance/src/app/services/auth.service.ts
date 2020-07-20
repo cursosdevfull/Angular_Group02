@@ -6,6 +6,7 @@ import { StorageService } from './storage.service';
 import { Subject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { MessageService } from './message.service';
+import jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
@@ -56,5 +57,21 @@ export class AuthService {
     return this.http.post(`${environment.pathAPI}/auth/new-access-token`, {
       refreshToken,
     });
+  }
+
+  getPropertyFieldValue(name: string): string {
+    const accessToken = this.storage.getFieldUser('user', 'accessToken');
+    const payload = jwt_decode(accessToken);
+
+    return payload.data[name];
+  }
+
+  getUrlPhotoUser(): string {
+    const photoFile = this.getPropertyFieldValue('photo');
+
+    if (photoFile) {
+      return `${environment.pathAPI}/files/${photoFile}`;
+    }
+    return '';
   }
 }

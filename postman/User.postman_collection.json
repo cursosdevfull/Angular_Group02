@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "6b3cf59d-a6b2-4c0f-947f-6fc304b96747",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTQ1NTU4ODEsImV4cCI6MTU5NDU1NjE4MSwiZGF0YSI6eyJuYW1lIjoiU2VyZ2lvIEhpZGFsZ28iLCJwaG90byI6IjE1OTQ1NTMzMDI0MzYuanBlZyIsInJvbGVzIjpbIkFETUlOSVNUUkFUT1IiXX19.ykSmcAJduQOR6dZlGtmWW7zsjiXUOhQtrjS49QJOodE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Sergio",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "sergio04@correo.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/SERGIO/Downloads/charla.jpg"
+						},
+						{
+							"key": "roles",
+							"value": "5f0af00fa368885e1409861a",
+							"type": "text"
+						},
+						{
+							"key": "roles",
+							"value": "5f0af022a368885e1409861b",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Sergio Hidalgo",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "sergio01@correo.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/SERGIO/Downloads/charla.jpg",
+							"disabled": true
+						},
+						{
+							"key": "roles",
+							"value": "5f0af00fa368885e1409861a",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "5f0af022a368885e1409861b",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/user/5f0af3d78dc3d72e1876cf33",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user",
+						"5f0af3d78dc3d72e1876cf33"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Sergio",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "sergio5@correo.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/SERGIO/Downloads/charla.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/user/5f0af42e8dc3d72e1876cf34",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user",
+						"5f0af42e8dc3d72e1876cf34"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Page",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTQ1NTc2MDgsImV4cCI6MTU5NDU1NzkwOCwiZGF0YSI6eyJuYW1lIjoiU2VyZ2lvIEhpZGFsZ28iLCJwaG90byI6IjE1OTQ1NTMzMDI0MzYuanBlZyIsInJvbGVzIjpbIkFETUlOSVNUUkFUT1IiXX19.XE8-vINzRXQyenvcEZ3TpsZnuRGKyZE5bth5S5MZ3Sc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "sort",
+							"value": "email",
+							"type": "text"
+						},
+						{
+							"key": "direction",
+							"value": "-1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/user/page/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user",
+						"page",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

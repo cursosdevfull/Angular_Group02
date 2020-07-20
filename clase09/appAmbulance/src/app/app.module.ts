@@ -21,7 +21,7 @@ import { ErrorService } from './services/error.service';
     HttpClientModule,
   ],
   providers: [
-    { provide: ErrorHandler, useClass: ErrorService },
+    /*     { provide: ErrorHandler, useClass: ErrorService }, */
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],

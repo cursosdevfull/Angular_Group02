@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "fbef96df-eada-4415-bfa2-f30515ebddcf",
+		"name": "Diagnostic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTQ1NjAwMzksImV4cCI6MTU5NDU2MDMzOSwiZGF0YSI6eyJuYW1lIjoiU2VyZ2lvIEhpZGFsZ28iLCJwaG90byI6IjE1OTQ1NTMzMDI0MzYuanBlZyIsInJvbGVzIjpbIkFETUlOSVNUUkFUT1IiXX19.gJLlutv4wuhMlfliGilTD33V3tRGzDt0a7g_yCcnyAQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/diagnostic/search/algo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"diagnostic",
+						"search",
+						"algo"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

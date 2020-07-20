@@ -6,6 +6,8 @@
         <mat-icon>add</mat-icon>
       </button>
     </div>
+    <mat-progress-bar color="primay" mode="determinate" [value]="advancedUploadImage" *ngIf="advancedUploadImage">
+    </mat-progress-bar>
     <table mat-table [dataSource]="listUsers" matSort>
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
@@ -15,6 +17,13 @@
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
         <td mat-cell *matCellDef="let row">{{row.email}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="photo">
+        <th mat-header-cell *matHeaderCellDef>Photo</th>
+        <td mat-cell *matCellDef="let row">
+          <img class="photoUser" [src]="getUrlPhoto(row)" alt="" *ngIf="row.photo">
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="roles">
@@ -28,7 +37,7 @@
           <button mat-icon-button color="accent" (click)="openForm(row)">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn">
+          <button mat-icon-button color="warn" (click)="delete(row)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>

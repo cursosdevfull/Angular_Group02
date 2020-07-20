@@ -12,8 +12,8 @@
       </button>
     </nav>
     <button mat-flat-button color="accent" [matMenuTriggerFor]="menu">
-      <mat-icon>face</mat-icon>
-      <span>Nombre usuario</span>
+      <div class="photoUser" #photoUser></div>
+      <span>{{nameUser}}</span>
       <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
     <mat-menu #menu="matMenu">

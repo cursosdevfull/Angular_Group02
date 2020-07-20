@@ -1,4 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+} from '@angular/core';
 import { MenuService, Menu } from '../../../services/menu.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
@@ -8,9 +15,12 @@ import { AuthService } from '../../../services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
   @Input() menu;
+  @ViewChild('photoUser') photoUser: ElementRef;
   elementsMenu: Menu[];
+  nameUser = '';
+  photoUrlUser = '';
 
   constructor(
     private menuService: MenuService,
@@ -20,7 +30,21 @@ export class HeaderComponent implements OnInit {
     this.elementsMenu = this.menuService.itemsMenu();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getDataUser();
+  }
+
+  ngAfterViewInit(): void {
+    if (this.photoUrlUser) {
+      this.photoUser.nativeElement.style.backgroundImage = `url("${this.photoUrlUser}")`;
+    }
+  }
+
+  getDataUser(): void {
+    this.nameUser = this.authService.getPropertyFieldValue('name');
+
+    this.photoUrlUser = this.authService.getUrlPhotoUser();
+  }
 
   openMenuSide(): void {
     this.menu.open();

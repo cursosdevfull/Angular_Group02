@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "c724ae16-1aa8-4844-914e-9b063aea9832",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "sergio01@correo.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://f7d0de46abc7.ngrok.io/auth/login",
+					"protocol": "https",
+					"host": [
+						"f7d0de46abc7",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Access Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "refreshToken",
+							"value": "swh7cg6HCC7HOQfI4KOLyNwyU8w1xDVoI6189fuuid8thfQW8VPTUEyM0Sr7XRHZpBFYALoPdmWS9bbVCrIeX6y3tGmX4DghGm496d4AFahtLpL19YKqwAThNNaGCrGJb41IQvsw0Gi7AiXGd2znTL05NTR2KmkP0gzu6nSN5eNZPp55w3OmR78xdw5pHU3YkphyzFj3YXoArAStkRlhALo2SBUHqzdK8WiFTmt5l77LseGeyVqL4VmVaCxeOnGL",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/auth/new-access-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"new-access-token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
