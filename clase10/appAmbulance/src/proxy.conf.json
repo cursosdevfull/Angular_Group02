@@ -1,0 +1,6 @@
+{
+  "/api/proxy": {
+    "target": "https://covid19.mathdro.id/api/confirmed",
+    "secure": false
+  }
+}

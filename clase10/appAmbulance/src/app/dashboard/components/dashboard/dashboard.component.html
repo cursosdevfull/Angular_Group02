@@ -1,0 +1,37 @@
+<div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="space-around center">
+  <mat-card>
+    <div class="graphic">
+      <ngx-charts-pie-chart [scheme]="colorScheme" [results]="dataSource" [legend]="showLegend" [labels]="showLabels"
+        [doughnut]="showDoughnut">
+      </ngx-charts-pie-chart>
+    </div>
+  </mat-card>
+
+  <mat-card>
+    <div class="graphic">
+      <ngx-charts-bar-vertical [scheme]="colorScheme" [results]="dataSource" [legend]="showLegend" [xAxis]="showXAxis"
+        [yAxis]="showYAxis" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel">
+      </ngx-charts-bar-vertical>
+    </div>
+  </mat-card>
+
+  <mat-card fxFlex="1 1 100%" class="marginTop">
+    <div class="graphic">
+
+      <mat-form-field appearance="fill">
+        <input type="text" matInput [formControl]="ctrlSearch" [matAutocomplete]="autoCovid">
+        <mat-autocomplete #autoCovid="matAutocomplete">
+          <mat-option *ngFor="let choice of choiceFiltered | async" [value]="choice">
+            {{choice}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <!--       <ngx-charts-bar-vertical [scheme]="colorScheme" [results]="dataSource" [legend]="showLegend" [xAxis]="showXAxis"
+        [yAxis]="showYAxis" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel">
+      </ngx-charts-bar-vertical> -->
+    </div>
+  </mat-card>
+</div>

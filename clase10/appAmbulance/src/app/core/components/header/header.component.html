@@ -1,0 +1,30 @@
+<mat-toolbar color="primary" fxLayout fxLayoutAlign="space-between center">
+  <div fxLayout fxLayoutAlign="start center">
+    <button mat-icon-button (click)="openMenuSide()" fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>{{'TITULO' | translate}}</h1>
+  </div>
+  <div fxLayout fxLayoutGap="20px">
+    <nav fxLayout fxLayoutAlign="start center" fxHide.lt-md>
+      <button mat-button *ngFor="let item of elementsMenu" (click)="goTo(item.path)">
+        {{item.title}}
+      </button>
+    </nav>
+    <select (change)="changeLanguage($event.target.value)">
+      <option value="es">{{'IDIOMA.ESPANOL' | translate}}</option>
+      <option value="en">{{'IDIOMA.INGLES' | translate}}</option>
+    </select>
+    <button mat-flat-button color="accent" [matMenuTriggerFor]="menu">
+      <div class="photoUser" #photoUser></div>
+      <span>{{nameUser}}</span>
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>lock</mat-icon>
+        Logout
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
